@@ -1,0 +1,42 @@
+.signup{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    margin:auto;
+    padding-top:50px;
+}
+
+
+.container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    max-width:500px;
+    width:500px;
+    height:200px;
+    border:2px solid gray;
+    padding-top:50px;
+}
+
+.login_btn{
+    color:white !important;
+    background:crimson !important ;
+    width:200px !important;
+    font-size: 14px !important;
+    font-weight:700 !important;
+}
+
+.register_btn{
+    color:white !important;
+    background:crimson !important ;
+    width:200px !important;
+    font-size: 14px !important;
+    font-weight:700 !important;
+}
+
+.copyright{
+    padding-bottom:10px;
+    color:black;
+}

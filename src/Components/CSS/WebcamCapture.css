@@ -1,0 +1,55 @@
+.webCapture{
+    display:flex;
+    flex-direction:column;
+}
+
+.user_info{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    width:300px;
+    padding:10px;
+    justify-content: space-around;
+}
+
+.input_username{
+    padding-top:5px;
+    font-size:14px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    width:300px;
+}
+
+.input_useremail{
+    padding-top:5px;
+    font-size:14px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    width:300px;
+}
+
+.video_capture{
+    margin:auto;
+}
+
+.webcamCapture{
+    /* margin-top:60px; */
+    position:relative;
+    /* margin-left:250px; */
+    margin:auto;
+    border-radius:10px;
+}
+
+.webcamCapture_button{
+    position:absolute !important;
+    bottom:0 !important;
+    /* margin:auto; */
+    left:50% !important;
+    transform:translate(-50%,70%) !important;
+    cursor:pointer !important;
+    color:white !important;
+    background:crimson !important;
+    margin-top: 200px !important;
+    width:100px !important;
+    /* align-items: center; */
+}

@@ -5,6 +5,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { IconButton } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import CloseIcon from "@material-ui/icons/Close";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [navbar, setNavbar] = useState(false);
@@ -19,11 +20,13 @@ function Header() {
           <div className="header_option">
             <p className="active">HOME</p>
             <p>ABOUT</p>
-            <p>LOGIN</p>
           </div>
           <div className="hiddenoption">
-            <IconButton className="menu_iconbtn">
-              <MenuIcon className="menu_btn" onClick={() => setNavbar(true)} />
+            <IconButton
+              className="menu_iconbtn"
+              onClick={() => setNavbar(true)}
+            >
+              <MenuIcon className="menu_btn" />
             </IconButton>
           </div>
         </div>

@@ -3,6 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./Components/Js/Header";
 import Home from "./Components/Js/Home";
+import WebcamCapture from "./Components/Js/WebcamCapture";
+import SignUp from "./Components/Js/SignUp";
 
 function App() {
   return (
@@ -11,7 +13,11 @@ function App() {
         <Header/>
         <Switch>
           <Route path="/">
-            <Home />
+            <SignUp/>
+            {/* <WebcamCapture /> */}
+            {/* <Home /> */}
+          </Route>
+          <Route path="/login">
           </Route>
         </Switch>
       </div>
