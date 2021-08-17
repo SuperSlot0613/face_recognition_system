@@ -14,7 +14,7 @@ const videoConstraints = {
 };
 
 function WebcamCapture({ login }) {
-  const webcamRef = useRef(null);
+  const webcamRef = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [hidden, sethidden] = useState(false);
@@ -25,10 +25,17 @@ function WebcamCapture({ login }) {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const capture = useCallback(async () => {
+  const capture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
 
     setbase64S({ ...base64S, imageUrl: imageSrc });
+
+    // const user = {
+    //   name: name,
+    //   email: email,
+    // };
+
+    axios.post("http://localhost:3003/userInfo", { name });
 
     setcameraImage(imageSrc);
     console.log(cameraImage);
@@ -44,15 +51,19 @@ function WebcamCapture({ login }) {
     await axios.post("http://localhost:3003/faceregister", base64S);
   };
 
-  const loginPart=async (e) =>{
+  const loginPart = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:3003/facelogin",base64S)
-  }
+    await axios.post("http://localhost:3003/facelogin", base64S)
+    .then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
+  };
 
   return (
     <div className="webCapture">
-      <form onSubmit={registerPart} className="video_capture">
+      <form className="video_capture">
         <div className="user_info">
           <div className="input_username">
             <input
