@@ -9,10 +9,10 @@ body {
     sans-serif;
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
-  background-image: url("https://www.nvsp.in/Content/img/parallax/features.jpg");
+  /* background-image: url("https://www.nvsp.in/Content/img/parallax/features.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1;
+  z-index: -1; */
 }
 
 code {

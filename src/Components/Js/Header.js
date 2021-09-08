@@ -18,7 +18,9 @@ function Header() {
         </div>
         <div className="header_right">
           <div className="header_option">
-            <p className="active">HOME</p>
+            <Link to="/home">
+              <p className="active">HOME</p>
+            </Link>
             <p>ABOUT</p>
           </div>
           <div className="hiddenoption">
