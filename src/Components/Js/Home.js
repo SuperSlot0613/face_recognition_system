@@ -1,5 +1,6 @@
 import React from "react";
 import "../CSS/Home.css";
+import Footer from "./Footer";
 import Homeleft from "./Homeleft";
 import Homeright from "./Homeright";
 
@@ -49,7 +50,9 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="home_down"></div>
+      <div className="home_down">
+        <Footer/>
+      </div>
     </div>
   );
 }

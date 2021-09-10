@@ -11,20 +11,23 @@ var cors = require("cors");
 app.use(cors());
 
 const port = 3003;
-function between(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
+// function between(min, max) {
+//   return Math.floor(Math.random() * (max - min) + min);
+// }
 
-app.post("/userInfo", async (req, res) => {
-  console.log(req.body);
-});
+// app.post("/userInfo", async (req, res) => {
+//   console.log(req.body);
+// });
 
 app.post("/faceregister", async (req, res) => {
   var base64Str = await req.body;
-  console.log(base64Str.imageUrl);
+  // console.log(base64Str)
+  // console.log(base64Str.imageUel);
+  // console.log(base64Str.name);
+  // console.log(base64Str.email);
   base64Data = base64Str.imageUrl;
   var path = "./Knowimages/";
-  var optionalObj = { fileName: `${between(1, 1000)}`, type: "png" };
+  var optionalObj = { fileName: `${base64Str.name}`, type: "png" };
 
   base64ToImage(base64Data, path, optionalObj);
 
@@ -35,7 +38,7 @@ app.post("/faceregister", async (req, res) => {
 
 app.post("/facelogin", async (req, res) => {
   var base64Str = await req.body;
-  console.log(base64Str.imageUrl);
+  // console.log(base64Str.imageUrl);
   base64Data = base64Str.imageUrl;
   var path = "./Uknowimages/";
   var optionalObj = { fileName: `image`, type: "png" };

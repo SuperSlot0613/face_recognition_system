@@ -6,6 +6,10 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const videoConstraints = {
   width: 350,
@@ -25,6 +29,7 @@ function WebcamCapture({ login }) {
 
   const dispatch = useDispatch();
   const history = useHistory();
+
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
 
@@ -34,11 +39,8 @@ function WebcamCapture({ login }) {
     //   name: name,
     //   email: email,
     // };
-
-    axios.post("http://localhost:3003/userInfo", { name });
-
     setcameraImage(imageSrc);
-    console.log(cameraImage);
+    // console.log(cameraImage);
     sethidden(true);
   }, [webcamRef]);
 
@@ -46,18 +48,36 @@ function WebcamCapture({ login }) {
     e.preventDefault();
     // console.log(base64S);
 
-    console.log(base64S);
+    // console.log(base64S);
+    const jsobject = {
+      imageUrl: base64S.imageUrl,
+      name: name,
+      email: email,
+    };
 
-    await axios.post("http://localhost:3003/faceregister", base64S);
+    await axios
+      .post("http://localhost:3003/faceregister", jsobject)
+      .then((res) => {
+        toast.success("You are register by in our database", {
+          autoClose: 3000,
+        });
+      });
   };
 
   const loginPart = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:3003/facelogin", base64S)
-    .then((res) => {
-      console.log(res);
-      console.log(res.data);
+    await axios.post("http://localhost:3003/facelogin", base64S).then((res) => {
+      // console.log(res);
+      // console.log(res.data);
+      if (res.data.response) {
+        history.push("/home");
+      } else {
+        toast.warning("You are not Recognize by our system", {
+          autoClose: 10000,
+        });
+        history.push("/");
+      }
     });
   };
 
