@@ -20,7 +20,8 @@
     "firebase-tools": "^9.16.0",
     "fs": "^0.0.1-security",
     "jsonfile": "^6.1.0",
-    "nodemon": "^2.0.12",
+    "mongoose": "^6.0.5",
+    "multer": "^1.4.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -31,7 +32,7 @@
     "wifi-password-cli": "^1.0.0"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"cd backend && nodemon app.js\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -51,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }

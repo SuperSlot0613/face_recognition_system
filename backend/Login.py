@@ -10,7 +10,7 @@ path='Knowimages'
 images=[]
 className=[]
 myList=os.listdir(path)
-# print(myList)
+print(myList)
 response=False
 imageName=""
 
@@ -69,13 +69,13 @@ if response==True:
         "response":True
     }
     print(json.dumps(res))
-    sys.stdout.flush()
+    sys.stdout.flush(res)
 else:
     res={
         "response":False
     }
     print(json.dumps(res))
-    sys.stdout.flush()
+    sys.stdout.flush(res)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

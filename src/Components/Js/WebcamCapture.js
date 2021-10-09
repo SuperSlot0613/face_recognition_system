@@ -61,6 +61,7 @@ function WebcamCapture({ login }) {
         toast.success("You are register by in our database", {
           autoClose: 3000,
         });
+        history.push("/");
       });
   };
 
@@ -69,7 +70,7 @@ function WebcamCapture({ login }) {
 
     await axios.post("http://localhost:3003/facelogin", base64S).then((res) => {
       // console.log(res);
-      // console.log(res.data);
+      console.log(res.data);
       if (res.data.response) {
         history.push("/home");
       } else {
