@@ -10,7 +10,7 @@ path='Knowimages'
 images=[]
 className=[]
 myList=os.listdir(path)
-print(myList)
+# print(myList)
 response=False
 imageName=""
 

@@ -18,7 +18,7 @@ function Header() {
         </div>
         <div className="header_right">
           <div className="header_option">
-            <Link to="/home">
+            <Link to="/home" style={{textDecoration:"none"}}>
               <p className="active">HOME</p>
             </Link>
             <p>ABOUT</p>

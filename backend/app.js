@@ -41,7 +41,7 @@ app.post("/faceregister", async (req, res) => {
 
 app.post("/facelogin", async (req, res) => {
   var base64Str = await req.body;
-  console.log(base64Str.imageUrl);
+  // console.log(base64Str.imageUrl);
   base64Data = base64Str.imageUrl;
   var path = "./Uknowimages/";
   var optionalObj = { fileName: `image`, type: "png" };
